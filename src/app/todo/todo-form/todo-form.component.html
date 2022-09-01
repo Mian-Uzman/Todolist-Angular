@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="card mt-4 shadow-sm">
+		<div class="card-body">
+			<form class="row gx-3 gy-2 align-items-center">
+				<div class="col">
+					<label class="visually-hidden" for="todoInput">Enter your todo item</label>
+					<input
+						type="text"
+						class="form-control"
+						id="todoInput"
+						[(ngModel)]="newTodoText"
+						name="newTodo"
+						placeholder="Add your todo item here!" />
+				</div>
+				<div class="col-auto">
+					<button type="submit" class="btn btn-outline-primary" (click)="addNewTodo()">
+						ADD
+						<i class="bi bi-plus-square-fill ms-1"></i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

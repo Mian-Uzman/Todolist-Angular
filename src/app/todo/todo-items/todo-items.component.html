@@ -1,0 +1,23 @@
+<div class="container">
+	<li class="list-group-item d-flex justify-content-between p-3">
+		<span>
+			<input type="checkbox" [checked]="completed" (click)="changeCompleteStatus()" />
+			<div [ngClass]="{ 'd-none': !toggleEdit }" class="d-inline ms-3">
+				<input type="text" [(ngModel)]="text" placeholder="Enter value" />
+				<button class="btn btn-sm btn-primary mx-3" (click)="updateTodoItem()">
+					Update
+				</button>
+				<button class="btn btn-sm btn-danger" (click)="toggleEditContainer()">
+					Cancel
+				</button>
+			</div>
+			<p class="d-inline ms-3" [ngClass]="{ strike: completed, 'd-none': toggleEdit }">
+				{{ text }}
+			</p>
+		</span>
+		<div>
+			<i class="bi bi-pencil-square me-3" (click)="toggleEditContainer()"></i>
+			<i class="bi bi-trash" (click)="deleteTodoItem()"></i>
+		</div>
+	</li>
+</div>

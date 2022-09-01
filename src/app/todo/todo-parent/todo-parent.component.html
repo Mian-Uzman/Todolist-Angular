@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-dark">
+	<div class="container">
+		<span class="navbar-brand">Todo List (Angular JS)</span>
+		<span class="navbar-brand">Total Items: {{ numberOfTodos }} </span>
+	</div>
+</nav>
+
+<div class="container">
+	<app-todo-form></app-todo-form>
+	<div class="mt-5">
+		<app-todo-items
+			*ngFor="let todo of todos"
+			[text]="todo.text"
+			[completed]="todo.completed"
+			[todoId]="todo._id">
+		</app-todo-items>
+	</div>
+</div>
